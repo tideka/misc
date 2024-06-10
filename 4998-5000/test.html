@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Change on Scroll</title>
+  <style>
+    #example {
+      height: 500px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Background Change on Scroll</h1>
+  <p>Scroll down to see the background change.</p>
+
+  <!-- Some content before the div -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl.</p>
+
+  <div id="example"></div>
+
+  <!-- Some content after the div -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl. Sed auctor, nisl nec ultricies tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl eget nisl.</p>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var example = document.getElementById('example');
+      var rect = example.getBoundingClientRect();
+
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        body.style.backgroundImage = 'url("./img/Level4blackandwhite.jpg")';
+      } else {
+        example.style.backgroundImage = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
